@@ -206,7 +206,7 @@ def impl(t0, dt):
 
 #step_t=0.01
 Pp = [0, 10, 20, 30, 50, 100]
-P = [Pi / 0.01 + 1 for Pi in Pp]
+P = [Pi / 0.01 for Pi in Pp]
 T1_e = []; T1_i = []
 ex = start()
 im = start()
@@ -219,7 +219,7 @@ for i in tqdm(range(1, int(Tf / dT1) + 1), mininterval = 1, position=0, leave=Tr
     T1_i.append(im)
 
 Pp_bad = [0, 0.22, 0.25, 0.5, 3, 5]
-P_bad = [Pi / 0.01 + 1 for Pi in Pp_bad]
+P_bad = [Pi / 0.01 for Pi in Pp_bad]
 for i in tqdm(range(1, 504), mininterval = 1, position=0, leave=True):
   ex_ex = ex
   ex = expl(ex_ex, dT1)
@@ -248,7 +248,7 @@ plt.savefig("1_e")
   
 #step_t=0.005
 Rr = [0, 10, 20, 30, 50, 100]
-R = [Ri / 0.01 + 1 for Ri in Rr]
+R = [Ri / 0.005 for Ri in Rr]
 T2_e = []; T2_i = []
 ex = start()
 im = start()
